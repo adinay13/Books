@@ -1,0 +1,11 @@
+.btn{
+    margin:5px 10px;
+    color: black;
+    background: #D5EAEB;
+    border-radius: 5px;
+}
+.input{
+    margin: 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+}

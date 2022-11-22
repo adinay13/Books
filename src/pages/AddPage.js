@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import s from './pages.module.css'
+
 const addApi = "http://localhost:4000/books"
 const AddPage = () => {
-    const[newBook, setNewBook] = useState({
 
+    const[newBook, setNewBook] = useState({
         title:'',
         author:'',
         id: Math.random()
@@ -15,7 +17,6 @@ const AddPage = () => {
         }catch (error){
             console.log(error)
         }
-
     }
     const forma = (event)=>{
         event.preventDefault()
@@ -31,14 +32,14 @@ const AddPage = () => {
     return (
         <>
             <Link to="/">
-                <button>HomePage</button>
+                <button className={s.btn}>HomePage</button>
             </Link>
             <form onSubmit={forma}>
-                <input type="text" placeholder="title" value={newBook.title}
+                <input className={s.input} type="text" placeholder="title" value={newBook.title}
                        onChange={(event)=> setNewBook({...newBook, title:event.target.value})}/>
-                <input type="text" placeholder="author" value={newBook.author}
+                <input className={s.input} type="text" placeholder="author" value={newBook.author}
                        onChange={(event)=> setNewBook({...newBook, author:event.target.value})}/>
-                <button type="submit" onClick={(event)=>console.log("ok")}>ОК</button>
+                <button className={s.btn} type="submit" onClick={(event)=>console.log("ok")}>ОК</button>
 
             </form>
 
